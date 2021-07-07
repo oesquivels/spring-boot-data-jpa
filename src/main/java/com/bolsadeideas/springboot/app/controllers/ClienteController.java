@@ -31,7 +31,15 @@ public class ClienteController {
 //	private IClienteDao clienteDao;
 	private IClienteService clienteService;
 
-//	@GetMapping({ "/", "/listar" })
+////	@GetMapping({ "/", "/listar" })
+//	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+//	public String listar(Model model) {
+//		model.addAttribute("titulo", "Listado de clientes");
+//		model.addAttribute("clientes", clienteService.findAll());
+//
+//		return "listar";
+//	}
+
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public String listar(Model model) {
 		model.addAttribute("titulo", "Listado de clientes");
@@ -39,7 +47,7 @@ public class ClienteController {
 
 		return "listar";
 	}
-
+	
 	// Mostrar el formulario al usuario
 	@RequestMapping(value = "/form")
 	public String crear(Map<String, Object> model) {
